@@ -5,19 +5,23 @@ import HomePage from 'pages/HomePage/HomePage';
 import { Layout } from 'components/Layout/Layout';
 import Login from 'pages/Login/Login';
 import Registration from 'pages/Registration/Registration';
+import { Toaster } from 'components/ToastWrap/ToastWrap';
 // import { ContactForm } from '../ContactForm/ContactForm';
 // import ContactList from '../ContactList/contactList';
 // import { MainTitle, SecondTitle } from './App.styled';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="registration" element={<Registration />} />
-      </Route>
-    </Routes>
+    <>
+      <Toaster />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="registration" element={<Registration />} />
+        </Route>
+      </Routes>
+    </>
 
     // <div>
     //   <MainTitle>Phonebook</MainTitle>
