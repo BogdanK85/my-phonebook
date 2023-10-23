@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <>
       <LoginForm />
-      <NavLink to="/registration">Sign up</NavLink>{' '}
+      <NavLink to="/register">Sign up</NavLink>{' '}
     </>
   );
 };

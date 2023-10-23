@@ -9,7 +9,7 @@ export const HeaderWrap = () => {
       <nav>
         <Link to="/">Home page</Link>
         <Link to="/Login">Log in</Link>
-        <Link to="/Registration">Regisrtation</Link>
+        <Link to="/register">Register</Link>
       </nav>
     </Header>
   );

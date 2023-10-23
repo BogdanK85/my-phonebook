@@ -5,7 +5,7 @@ import {
   RegistrationFormStyled,
 } from './RegistrationForm.styled';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ onSubmit }) => {
   //   const handleFormSubmit = event => {
   //     event.preventDefault();
 
@@ -18,10 +18,7 @@ const RegistrationForm = () => {
   //   };
 
   return (
-    <RegistrationFormStyled
-      //   onSubmit={handleFormSubmit}
-      autoComplete="off"
-    >
+    <RegistrationFormStyled onSubmit={onSubmit} autoComplete="off">
       <Label>
         Name
         <Input

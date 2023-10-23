@@ -12,7 +12,7 @@ export const Toaster = () => {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="white"
+      theme="dark"
     />
   );
 };

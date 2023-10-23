@@ -4,8 +4,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const registration = createAsyncThunk(
-  'auth/registration',
+export const register = createAsyncThunk(
+  'auth/register',
   async (credentials, thunkApi) => {
     try {
       const response = await axios.post('users/signup', credentials);
@@ -33,3 +33,35 @@ export const logIn = createAsyncThunk(
     }
   }
 );
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
+  try {
+    await axios.post('user/logout');
+    token.unset();
+  } catch (error) {
+    return thunkApi.rejectWithValue(error.message);
+  }
+});
+
+// export const onRegister = async credentials => {
+//   const response = await axios.post('/users/signup', credentials);
+//   token.set(response.data.token);
+//   return response.data;
+// };
+
+// export const onLogin = async credentials => {
+//   const response = await axios.post('/users/login', credentials);
+//   token.set(response.data.token);
+//   return response.data;
+// };
+
+// export const onLogout = async () => {
+//   const response = await axios.post('/users/logout');
+//   token.unset();
+//   return response.data;
+// };
+
+// export const onGetCurrentUser = async () => {
+//   const response = await axios.get('/users/current');
+//   return response.data;
+// };

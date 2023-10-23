@@ -1,9 +1,9 @@
-const {
+import {
   Label,
   Input,
   ButtonSignIn,
   LoginFormStyled,
-} = require('./LoginFonm.styled');
+} from './LoginFonm.styled';
 
 const LoginForm = () => {
   return (

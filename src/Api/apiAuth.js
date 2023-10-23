@@ -1,6 +1,6 @@
 import axios from './tokenAxios';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const addContact = async contactData => {
   const response = await axios.post(`/contacts`, contactData);

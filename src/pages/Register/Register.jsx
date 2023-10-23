@@ -1,15 +1,15 @@
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
 import { useDispatch } from 'react-redux';
-import { registration } from 'redux/Auth/auth-operations';
+import { register } from 'redux/Auth/auth-operations';
 
-const Registration = () => {
+const Register = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
     const form = event.currentTarget;
     dispatch(
-      registration({
+      register({
         name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
@@ -28,4 +28,4 @@ const Registration = () => {
   return <RegistrationForm onSubmit={handleSubmit} />;
 };
 
-export default Registration;
+export default Register;
