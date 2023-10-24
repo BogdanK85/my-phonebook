@@ -43,25 +43,21 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
   }
 });
 
-// export const onRegister = async credentials => {
-//   const response = await axios.post('/users/signup', credentials);
-//   token.set(response.data.token);
-//   return response.data;
-// };
+export const refrechCurrentUser = createAsyncThunk(
+  'auth/refrech',
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
+    const persistToken = state.auth.token;
+    if (persistToken === null) {
+      return thunkApi.rejectWithValue('Failed to get user');
+    }
 
-// export const onLogin = async credentials => {
-//   const response = await axios.post('/users/login', credentials);
-//   token.set(response.data.token);
-//   return response.data;
-// };
-
-// export const onLogout = async () => {
-//   const response = await axios.post('/users/logout');
-//   token.unset();
-//   return response.data;
-// };
-
-// export const onGetCurrentUser = async () => {
-//   const response = await axios.get('/users/current');
-//   return response.data;
-// };
+    try {
+      token.set(persistToken);
+      const response = await axios.get('users/current');
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

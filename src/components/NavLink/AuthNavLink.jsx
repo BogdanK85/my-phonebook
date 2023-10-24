@@ -10,6 +10,9 @@ export const AuthNavLink = () => {
       <NavLink to="/login" className="login">
         Log In
       </NavLink>
+      <NavLink to="/contacts" className="contacts">
+        Contacts
+      </NavLink>
     </AuthNavLinkStyle>
   );
 };

@@ -1,19 +1,31 @@
+// import { Loading } from 'components/Loader/Loader';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsOperations';
+import { deleteContactById } from 'redux/contactsOperations';
 import { ContactItemText, ContactListItem, DeleteBtn } from './Contact.styled';
 
 const Contact = ({ contact }) => {
+  // const isLoading = useSelector(selectLoading);
+  // const contacts = useSelector(selectContacts);
+  // const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
-  const onDeleteContact = () => dispatch(deleteContact(contact.id));
+  const onDeleteContact = contactId => {
+    dispatch(deleteContactById(contactId));
+  };
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   return (
-    <ContactListItem>
-      <ContactItemText>Name: {contact.name}</ContactItemText>
-      <ContactItemText>Phone: {contact.number}</ContactItemText>
-      <DeleteBtn type="button" onClick={onDeleteContact}>
-        Delete
-      </DeleteBtn>
-    </ContactListItem>
+    <>
+      <ContactListItem>
+        <ContactItemText>Name: {contact.name}</ContactItemText>
+        <ContactItemText>Phone: {contact.number}</ContactItemText>
+        <DeleteBtn type="button" onClick={onDeleteContact}>
+          Delete
+        </DeleteBtn>
+      </ContactListItem>
+    </>
   );
 };
 
