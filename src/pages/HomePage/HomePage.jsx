@@ -1,7 +1,11 @@
-import { NavLinkSignIn } from './HomePage.styled';
+import { InitialHomePage } from 'components/InitialHomePage/InitialHomePage';
+import { LoginUserPage } from 'components/LoginUserPage/LoginUserPage';
+import { useAuth } from 'helpers/hookUseAuth';
 
 const HomePage = () => {
-  return <NavLinkSignIn to="/login">Sign in</NavLinkSignIn>;
+  const { isLoaggedIn } = useAuth();
+
+  return isLoaggedIn ? <LoginUserPage /> : <InitialHomePage />;
 };
 
 export default HomePage;

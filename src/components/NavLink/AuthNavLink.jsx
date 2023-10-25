@@ -7,11 +7,8 @@ export const AuthNavLink = () => {
       <NavLink to="/register" className="link">
         Register
       </NavLink>
-      <NavLink to="/login" className="login">
+      <NavLink to="/login" className="link">
         Log In
-      </NavLink>
-      <NavLink to="/contacts" className="contacts">
-        Contacts
       </NavLink>
     </AuthNavLinkStyle>
   );

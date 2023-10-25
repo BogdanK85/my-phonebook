@@ -8,6 +8,12 @@ export const UserMenuStyle = styled.div`
 export const User = styled.p`
   color: #225a44;
   font-size: 16px;
+  font-weight: 500;
+`;
+export const UserName = styled.span`
+  color: #225a44;
+  font-size: 20px;
+  font-weight: 600;
 `;
 export const LogoutBtn = styled.button`
   font-size: 16px;

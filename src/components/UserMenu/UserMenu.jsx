@@ -1,15 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/Auth/auth-operations';
-import { selectUser } from 'redux/Auth/auth-selectors';
-import { LogoutBtn, User, UserMenuStyle } from './UserMenu.styled';
+import { LogoutBtn, User, UserMenuStyle, UserName } from './UserMenu.styled';
+import Nice_user from '../../images/Nice_user.png';
+import { useAuth } from 'helpers/hookUseAuth';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const userName = useSelector(selectUser);
+  const { user } = useAuth();
 
   return (
     <UserMenuStyle>
-      <User>{userName}</User>
+      <img src={Nice_user} alt="user Img " width="35" />
+      <User>
+        Welcome! You are logged as <UserName>"{user}"</UserName>
+      </User>
       <LogoutBtn type="button" onClick={() => dispatch(logOut())}>
         Logout
       </LogoutBtn>

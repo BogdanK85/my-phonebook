@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const SectionStyle = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 5px;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
@@ -16,7 +16,7 @@ export const SectionStyle = styled.div`
 `;
 export const SectionTitle = styled.h2`
   color: beige;
-  font-size: 44px;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 50px;
 `;

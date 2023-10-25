@@ -7,6 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(
+    90deg,
+    rgba(134, 40, 80, 1) 0%,
+    rgba(200, 11, 32, 0.9724264705882353) 74%
+  );
 }
 
 code {

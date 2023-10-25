@@ -1,13 +1,12 @@
-import { MainTitle, SecondTitle } from 'components/App/App.styled';
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import ContactList from 'components/ContactList/contactList';
+import { Contact } from 'components/Contact/Contact';
 import { Filter } from 'components/Filter/Filter';
+import { Section } from 'components/Section/Section';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllContacts } from 'redux/contactsOperations';
 
 const Contacts = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllContacts());
@@ -15,15 +14,14 @@ const Contacts = () => {
 
   return (
     <>
-      <div>
-        <MainTitle>Phonebook</MainTitle>
-        <ContactForm />
-        <SecondTitle>Contacts</SecondTitle>
-        <Filter />
+      <Section>
         <div>
-          <ContactList />
+          <Filter />
         </div>
-      </div>
+        <div>
+          <Contact />
+        </div>
+      </Section>
     </>
   );
 };

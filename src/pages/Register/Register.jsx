@@ -18,14 +18,6 @@ const Register = () => {
     );
     form.reset();
   };
-  //   const registration = async body => {
-  //     try {
-  //       const data = await signUp(body);
-  //       console.log(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
   return (
     <Section>
       <RegistrationForm onSubmit={handleSubmit} />
