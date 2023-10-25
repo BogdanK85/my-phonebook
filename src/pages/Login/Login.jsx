@@ -1,7 +1,17 @@
-import LoginForm from 'components/LoginForm/LoginForm';
+import { Section } from 'components/Section/Section';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { logIn } from 'redux/Auth/auth-operations';
+import {
+  ButtonLogin,
+  LoginFormstyle,
+  LoginFormTitle,
+  LoginInput,
+  LoginInputTitle,
+  LoginLabel,
+  Wraper,
+} from './Login.styled';
+import emailImg from '../../images/e-mail.png';
+import passwordlImg from '../../images/login-password.png';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,10 +29,44 @@ const Login = () => {
   };
 
   return (
-    <>
-      <LoginForm />
-      <NavLink to="/register">Sign up</NavLink>{' '}
-    </>
+    <Section>
+      <LoginFormTitle>Login account</LoginFormTitle>
+      <LoginFormstyle onSubmit={handleSubmit} autoComplete="on">
+        <LoginLabel>
+          <Wraper>
+            <img src={emailImg} alt="email Img " width="35" />
+            <LoginInputTitle>Email</LoginInputTitle>
+          </Wraper>
+          <LoginInput
+            type="text"
+            name="email"
+            title="Name may contain letters, apostrophe, dash and spaces."
+            required
+            placeholder=""
+            id="email"
+          />
+        </LoginLabel>
+        <LoginLabel>
+          <Wraper>
+            <img src={passwordlImg} alt="password Img " width="35" />
+            <LoginInputTitle>Password</LoginInputTitle>
+          </Wraper>
+          <LoginInput
+            type="text"
+            name="password"
+            title="Name may contain letters, apostrophe, dash and spaces."
+            required
+            placeholder=""
+            id="password"
+          />
+        </LoginLabel>
+        <ButtonLogin type="submit">Log in</ButtonLogin>
+      </LoginFormstyle>
+    </Section>
+
+    // <>
+    //   <NavLink to="/register">Sign up</NavLink>{' '}
+    // </>
   );
 };
 

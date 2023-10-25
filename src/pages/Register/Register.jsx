@@ -1,4 +1,5 @@
 import RegistrationForm from 'components/RegistrationForm/RegistrationForm';
+import { Section } from 'components/Section/Section';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/Auth/auth-operations';
 
@@ -25,7 +26,11 @@ const Register = () => {
   //       console.log(error);
   //     }
   //   };
-  return <RegistrationForm onSubmit={handleSubmit} />;
+  return (
+    <Section>
+      <RegistrationForm onSubmit={handleSubmit} />
+    </Section>
+  );
 };
 
 export default Register;

@@ -1,7 +1,10 @@
 /* a {
   display: flex;
+  flex-direction: column;
+  padding-top: 50px;
   justify-content: center;
   align-items: center;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +17,8 @@
   font-weight: 600;
   color: beige;
   color: #225a44;
+
+  margin-bottom: 50px;
 
   padding: 13px;
   &:hover,
