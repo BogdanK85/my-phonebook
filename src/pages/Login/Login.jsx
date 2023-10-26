@@ -32,7 +32,7 @@ const Login = () => {
     <Section>
       <LoginFormTitle>Login account</LoginFormTitle>
       <LoginFormstyle onSubmit={handleSubmit} autoComplete="on">
-        <LoginLabel>
+        <LoginLabel htmlFor="email">
           <Wraper>
             <img src={emailImg} alt="email Img " width="35" />
             <LoginInputTitle>Email</LoginInputTitle>
@@ -46,7 +46,7 @@ const Login = () => {
             id="email"
           />
         </LoginLabel>
-        <LoginLabel>
+        <LoginLabel htmlFor="password">
           <Wraper>
             <img src={passwordlImg} alt="password Img " width="35" />
             <LoginInputTitle>Password</LoginInputTitle>
@@ -63,10 +63,6 @@ const Login = () => {
         <ButtonLogin type="submit">Log in</ButtonLogin>
       </LoginFormstyle>
     </Section>
-
-    // <>
-    //   <NavLink to="/register">Sign up</NavLink>{' '}
-    // </>
   );
 };
 

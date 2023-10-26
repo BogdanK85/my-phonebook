@@ -21,12 +21,6 @@ export const ContactListItem = styled.li`
   gap: 20px;
   font-size: 20px;
   font-weight: 600;
-
-  /* &:first-child {
-    justify-content: flex-start;
-    padding-left: 15px;
-    gap: 120px; */
-  /* } */
 `;
 export const ContactItemText = styled.p`
   font-size: 18px;

@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const getAllContacts = createAsyncThunk(
-  'contacts/fetchAllContacts',
+  'contact/fetchAllContacts',
   async (_, thunkAPI) => {
     try {
       const response = await allContacts();
@@ -36,7 +36,7 @@ export const addNewContact = createAsyncThunk(
 );
 
 export const deleteContactById = createAsyncThunk(
-  'contact/fetchDeleteContact',
+  'contacts/fetchDeleteContact',
   async (id, thunkAPI) => {
     try {
       const response = await removeContact(id);

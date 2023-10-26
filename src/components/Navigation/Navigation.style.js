@@ -4,15 +4,17 @@ export const NaviStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 7px;
 
   .link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 20px;
     font-weight: 600;
     color: beige;
-    padding: 13px;
+    padding: 7px;
     &:hover,
     &:focus {
       color: rgb(222, 155, 28);

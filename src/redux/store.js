@@ -1,8 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-  // getDefaultMiddleware,
-} from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { contactsReducer } from './contactsSlice';
 import storage from 'redux-persist/lib/storage';
 import { authReducer } from './Auth/authUserSlice';
@@ -50,10 +46,5 @@ export const store = configureStore({
       },
     }),
 });
-// export const store = configureStore({
-//   reducer: rootReducer,
-//   // filter: filterReducer,
-//   middleware,
-// });
-// export default store;
+
 export const persistor = persistStore(store);

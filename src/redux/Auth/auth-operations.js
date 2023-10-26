@@ -25,7 +25,7 @@ export const logIn = createAsyncThunk(
     try {
       const response = await axios.post('users/login', credentials);
       token.set(response.data.token);
-      toast.success('Сongratulations');
+      toast.success('Congratulations');
       return response.data;
     } catch (error) {
       toast.error('The password or e-mail address is incorrect');
@@ -36,7 +36,7 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
   try {
-    await axios.post('user/logout');
+    await axios.post('users/logout');
     token.unset();
   } catch (error) {
     return thunkApi.rejectWithValue(error.message);

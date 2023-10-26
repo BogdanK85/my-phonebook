@@ -6,6 +6,7 @@ export const FilterStyle = styled.label`
   margin-left: 50px;
   flex-direction: column;
   padding-left: 10px;
+  align-items: center;
 `;
 
 export const Input = styled.input`
@@ -26,4 +27,5 @@ export const Input = styled.input`
 export const FilterText = styled.p`
   font-size: 22px;
   font-weight: 500;
+  color: beige;
 `;

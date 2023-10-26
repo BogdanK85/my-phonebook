@@ -1,14 +1,17 @@
-// import { validateForm } from 'helpers/validationForm';
+import { Wraper } from 'pages/Login/Login.styled';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewContact } from 'redux/contactsOperations';
 import { selectContacts } from 'redux/selectors';
 import {
   ButtonAddContact,
+  FormInputTitle,
   FormStyled,
   Input,
   Label,
 } from './ContactForm.styled';
+import user from '../../images/user.png';
+import phone from '../../images/phone.png';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -54,7 +57,11 @@ export const ContactForm = () => {
   return (
     <FormStyled onSubmit={handleFormSubmit}>
       <Label>
-        Name
+        <Wraper>
+          <img src={user} alt="email Img " width="25" />
+          <FormInputTitle>Name</FormInputTitle>
+        </Wraper>
+
         <Input
           onChange={handleFormInput}
           value={name}
@@ -67,7 +74,10 @@ export const ContactForm = () => {
         />
       </Label>
       <Label>
-        Number
+        <Wraper>
+          <img src={phone} alt="email Img " width="20" />
+          <FormInputTitle>Number</FormInputTitle>
+        </Wraper>
         <Input
           onChange={handleFormInput}
           value={number}

@@ -10,6 +10,7 @@ export const Filter = () => {
   const handleFilterChange = event => {
     dispatch(addFilter(event.target.value));
   };
+
   return (
     <FilterStyle>
       <FilterText>Find contact by name</FilterText>

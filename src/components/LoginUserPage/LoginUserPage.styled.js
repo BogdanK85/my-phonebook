@@ -2,16 +2,50 @@ import { styled } from 'styled-components';
 
 export const LoginUserPageWrap = styled.form`
   display: flex;
-  width: 400px;
-  height: 250px;
   justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: wra p;
   flex-direction: column;
   margin-bottom: 15px;
   margin-left: 50px;
-  outline: 1px solid #000000;
+  text-align: center;
 `;
+export const LoginUserTitle = styled.h2`
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: beige;
+`;
+export const LoginUserText = styled.p`
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  color: beige;
+`;
+export const ActionWraper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  margin-top: 25px;
+`;
+export const ActionBoxWraper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+`;
+export const ImgActionBtn = styled.img`
+width: 150px;
+  transition: transform  0.5s;
+  &: hover, &: focus {
+  transform: scale(1.2)
+  }
+`;
+
 export const Label = styled.label`
   display: flex;
   justify-content: center;

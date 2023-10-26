@@ -1,5 +1,3 @@
-// import { Loading } from 'components/Loader/Loader';
-// import { ContactForm } from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/contactList';
 import { Loading } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
@@ -27,7 +25,6 @@ export const Contact = () => {
   }
   return (
     <>
-      {/* <ContactForm /> */}
       {contacts.length === 0 ? (
         <Notification message="There are no contacts" />
       ) : filteredContacts.length > 0 ? (
@@ -36,18 +33,8 @@ export const Contact = () => {
           onDeleteContact={onDeleteContact}
         />
       ) : (
-        <Notification />
+        <Notification message="There are no contacts for this match" />
       )}
-      {/* //{' '}
-      <ContactListItem>
-        // <ContactItemText>Name: {contact.name}</ContactItemText>
-        // <ContactItemText>Phone: {contact.number}</ContactItemText>
-        //{' '}
-        <DeleteBtn type="button" onClick={onDeleteContact}>
-          // Delete //{' '}
-        </DeleteBtn>
-        //{' '}
-      </ContactListItem> */}
     </>
   );
 };

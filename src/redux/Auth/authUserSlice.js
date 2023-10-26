@@ -64,6 +64,10 @@ const authUserSlise = createSlice({
         state.isLoading = false;
         state.error = payload;
       })
+      .addCase(refrechCurrentUser.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(refrechCurrentUser.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.user = payload;

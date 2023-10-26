@@ -3,9 +3,9 @@ import { LoginUserPage } from 'components/LoginUserPage/LoginUserPage';
 import { useAuth } from 'helpers/hookUseAuth';
 
 const HomePage = () => {
-  const { isLoaggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  return isLoaggedIn ? <LoginUserPage /> : <InitialHomePage />;
+  return isLoggedIn ? <LoginUserPage /> : <InitialHomePage />;
 };
 
 export default HomePage;

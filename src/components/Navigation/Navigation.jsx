@@ -8,17 +8,17 @@ export const Navigation = () => {
 
   return (
     <NaviStyle>
-      <NavLink>
+      <NavLink className="link" to="/">
         <img src={home} alt="home Img " width="35" height="35" />
         Home
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink className="link" to="/contacts">
-            Contacts
-          </NavLink>
           <NavLink className="link" to="/newaccountpage">
             New Account Page
+          </NavLink>
+          <NavLink className="link" to="/contacts">
+            Contacts
           </NavLink>
         </>
       )}

@@ -1,16 +1,20 @@
-import { Header, Link, Logo } from './Header.styled';
+import { Header, Logo } from './Header.styled';
 import headerLogo from '../../images/phonebook.svg.png';
+import { useAuth } from 'helpers/hookUseAuth';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { Navigation } from 'components/Navigation/Navigation';
+import { AuthNavLink } from 'components/AuthNavLink/AuthNavLink';
+
 export const HeaderWrap = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <Header>
       <Logo>
         <img src={headerLogo} alt="Header Logo" width="115" />
       </Logo>
-      <nav>
-        <Link to="/">Home page</Link>
-        <Link to="/Login">Log in</Link>
-        <Link to="/register">Register</Link>
-      </nav>
+      <Navigation />
+      {isLoggedIn ? <UserMenu /> : <AuthNavLink />}
     </Header>
   );
 };
