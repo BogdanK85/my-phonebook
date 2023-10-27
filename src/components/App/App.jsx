@@ -13,7 +13,9 @@ import { PrivateRoute } from 'components/PrivateRoute';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const Register = lazy(() => import('../../pages/Register/Register'));
 const Login = lazy(() => import('../../pages/Login/Login'));
-const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
+const ContactsPage = lazy(() =>
+  import('../../pages/ContactsPage/ContactsPage')
+);
 const NewAccountPage = lazy(() =>
   import('../../pages/NewAccountPage/NewAccountPage')
 );
@@ -45,7 +47,7 @@ export const App = () => {
             <Route
               path="/login"
               element={
-                <PublicRoute redirectTo="/contacts" component={<Login />} />
+                <PublicRoute redirectTo="/contactspage" component={<Login />} />
               }
             />
             <Route
@@ -60,7 +62,10 @@ export const App = () => {
             <Route
               path="/contacts"
               element={
-                <PrivateRoute redirectTo="/login" component={<Contacts />} />
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<ContactsPage />}
+                />
               }
             />
           </Route>

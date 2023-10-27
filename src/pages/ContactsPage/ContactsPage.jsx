@@ -1,4 +1,4 @@
-import { Contact } from 'components/Contact/Contact';
+import ContactList from 'components/ContactList/contactList';
 import { Filter } from 'components/Filter/Filter';
 import { Section } from 'components/Section/Section';
 import { useEffect } from 'react';
@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { getAllContacts } from 'redux/contactsOperations';
 import { Wraper } from './Contact.styled';
 
-const Contacts = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,11 +27,11 @@ const Contacts = () => {
           <Filter />
         </div>
         <div>
-          <Contact />
+          <ContactList />
         </div>
       </Section>
     </>
   );
 };
 
-export default Contacts;
+export default ContactsPage;

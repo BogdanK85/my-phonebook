@@ -1,40 +1,26 @@
-import ContactList from 'components/ContactList/contactList';
-import { Loading } from 'components/Loader/Loader';
-import { Notification } from 'components/Notification/Notification';
-import { useContacts } from 'helpers/hookUseContacts';
 import { useDispatch } from 'react-redux';
 import { deleteContactById } from 'redux/contactsOperations';
+import { ContactItemText, ContactListItem, DeleteBtn } from './Contact.styled';
 
-export const Contact = () => {
-  const { isLoading, contacts, filter } = useContacts();
+export const Contact = ({ id, name, number, deleteContact }) => {
   const dispatch = useDispatch();
 
-  const filteredContacts = contacts.filter(contact => {
-    return (
-      contact.name.toLowerCase().includes(filter.toLowerCase()) ||
-      contact.number.includes(filter)
-    );
-  });
-
-  const onDeleteContact = contactId => {
+  const handleDeleteContact = contactId => {
     dispatch(deleteContactById(contactId));
+    //   .then(() => {
+    //   deleteContact(contactId);
+    // });
   };
 
-  if (isLoading) {
-    return <Loading />;
-  }
   return (
     <>
-      {contacts.length === 0 ? (
-        <Notification message="There are no contacts" />
-      ) : filteredContacts.length > 0 ? (
-        <ContactList
-          filteredContacts={filteredContacts}
-          onDeleteContact={onDeleteContact}
-        />
-      ) : (
-        <Notification message="There are no contacts for this match" />
-      )}
+      <ContactListItem key={id}>
+        <ContactItemText>Name: {name}</ContactItemText>
+        <ContactItemText>Number: {number}</ContactItemText>
+        <DeleteBtn type="button" onClick={() => handleDeleteContact(id)}>
+          Delete
+        </DeleteBtn>
+      </ContactListItem>
     </>
   );
 };
