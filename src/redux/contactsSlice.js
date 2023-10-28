@@ -52,7 +52,7 @@ const contactsSlice = createSlice({
         state.contacts.isLoading = false;
         state.contacts.error = null;
         state.contacts.items = state.contacts.items.filter(
-          contact => contact.id !== action.payload.id
+          contact => contact.id !== action.payload
         );
         // state.contactDeleted(action.payload.id);
       })
@@ -64,7 +64,7 @@ const contactsSlice = createSlice({
       .addCase(updateContactById.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         const updatedIndex = state.contacts.items.findIndex(
-          contact => contact.id === action.payload.id
+          contact => contact.id === action.payload
         );
         if (updatedIndex !== -1) {
           state.contacts.items[updatedIndex] = action.payload;

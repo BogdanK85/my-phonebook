@@ -15,7 +15,7 @@ export const Navigation = () => {
       {isLoggedIn && (
         <>
           <NavLink className="link" to="/newaccountpage">
-            New Account Page
+            Add New Account
           </NavLink>
           <NavLink className="link" to="/contacts">
             Contacts

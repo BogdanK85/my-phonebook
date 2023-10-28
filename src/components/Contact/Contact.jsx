@@ -7,9 +7,6 @@ export const Contact = ({ id, name, number, deleteContact }) => {
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContactById(contactId));
-    //   .then(() => {
-    //   deleteContact(contactId);
-    // });
   };
 
   return (
