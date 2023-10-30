@@ -37,17 +37,16 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="*" element={<Navigate to="/" />} />
             <Route
               path="/register"
               element={
-                <PublicRoute redirectTo="/homepage" component={<Register />} />
+                <PublicRoute redirectTo="/contacts" component={<Register />} />
               }
             />
             <Route
               path="/login"
               element={
-                <PublicRoute redirectTo="/contactspage" component={<Login />} />
+                <PublicRoute redirectTo="/contacts" component={<Login />} />
               }
             />
             <Route
@@ -69,6 +68,7 @@ export const App = () => {
               }
             />
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
     </>
