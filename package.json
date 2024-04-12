@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "my-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://BogdanK85.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://BogdanK85.github.io/my-phonebook/",
   "dependencies": {
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.7",
